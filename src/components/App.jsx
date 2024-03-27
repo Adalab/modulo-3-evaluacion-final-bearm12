@@ -15,7 +15,7 @@ function App() {
     getCharacterApi().then((characterData) => {
       setCharacters(characterData);
     });
-  });
+  }, []);
 
   const handleChangeName = (value) => {
     setFilteredName(value);
