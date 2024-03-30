@@ -4,12 +4,14 @@ import getCharacterApi from "../services/charactersApi";
 import Header from "./Header";
 import Filters from "./Filters/Filters";
 import CharactersList from "./CharactersList";
-import { Route, Routes, matchPath, useLocation } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
+import { Route, Routes, matchPath, useLocation } from "react-router-dom";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filteredName, setFilteredName] = useState("");
+  const [filteredSpecie, setFilteredSpecie] = useState("");
+  const [filteredStatus, setFilteredStatus] = useState([]);
 
   useEffect(() => {
     getCharacterApi().then((characterData) => {
@@ -21,9 +23,34 @@ function App() {
     setFilteredName(value);
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filteredName.toLowerCase());
-  });
+  const handleChangeSpecie = (value) => {
+    setFilteredSpecie(value);
+  };
+
+  const handleChangeStatus = (value, isChecked) => {
+    if (isChecked) {
+      setFilteredStatus([...filteredStatus, value]);
+    } else {
+      setFilteredStatus(
+        filteredStatus.filter((status) => {
+          return status !== value;
+        })
+      );
+    }
+  };
+
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filteredName.toLowerCase());
+    })
+    .filter((character) => {
+      return character.species.toLowerCase().includes(filteredSpecie);
+    })
+    .filter((character) => {
+      return filteredStatus.length > 0
+        ? filteredStatus.includes(character.status.toLowerCase())
+        : true;
+    });
 
   const { pathname } = useLocation();
   const characterRoute = matchPath("/character/:idChar", pathname);
@@ -45,9 +72,16 @@ function App() {
               <>
                 <Filters
                   filterName={handleChangeName}
+                  filterSpecie={handleChangeSpecie}
+                  filterStatus={handleChangeStatus}
                   nameValue={filteredName}
+                  spevieValue={filteredSpecie}
+                  statusValue={filteredStatus}
                 />
-                <CharactersList charactersData={filteredCharacters} />
+                <CharactersList
+                  charactersData={filteredCharacters}
+                  searchName={filteredName}
+                />
               </>
             }
           />

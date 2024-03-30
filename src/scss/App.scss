@@ -1,9 +1,11 @@
 @import 'core/reset';
+@import 'core/variables';
 
-header {
-    background-color: black;
 
-    img{
-        width: 100vw;
-    }
+.blur-bg {
+    background-image: url("../images/rick-and-morty.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    height: 100vh;        
 }

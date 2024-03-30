@@ -10,17 +10,20 @@ function FilterByName({ filterName, nameValue }) {
       ev.preventDefault();
     }
   };
+
   return (
     <div>
-      <label htmlFor="name">By name</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        value={nameValue}
-        onChange={handleChange}
-        onKeyDown={handleKey}
-      />
+      <h3 className="inputs__title">By name</h3>
+      <div className="inputs__choices">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={nameValue}
+          onChange={handleChange}
+          onKeyDown={handleKey}
+        />
+      </div>
     </div>
   );
 }

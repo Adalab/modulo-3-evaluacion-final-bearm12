@@ -1,12 +1,10 @@
-import React from "react";
+import "../scss/components/Header.scss";
+import title from "../images/Rick-and-Morty-title.png";
 
 function Header() {
   return (
-    <header>
-      <img
-        src="https://1000logos.net/wp-content/uploads/2022/03/Rick-and-Morty.png"
-        alt="Ricky and Morty"
-      />
+    <header className="header">
+      <img src={title} alt="Rick and Morty" className="header__img" />
     </header>
   );
 }

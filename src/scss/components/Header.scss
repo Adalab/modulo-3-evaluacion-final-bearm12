@@ -1,0 +1,18 @@
+.header {
+    width: 60vw;
+    margin: 0 20vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+    &__img{
+       width: 100%;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .header {
+        width: 40vw;
+        margin: 0 30vw;
+    }
+}
