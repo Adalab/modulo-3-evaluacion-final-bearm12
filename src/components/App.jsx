@@ -69,7 +69,7 @@ function App() {
           <Route
             path="/"
             element={
-              <>
+              <div className="main__characters">
                 <Filters
                   filterName={handleChangeName}
                   filterSpecie={handleChangeSpecie}
@@ -82,7 +82,7 @@ function App() {
                   charactersData={filteredCharacters}
                   searchName={filteredName}
                 />
-              </>
+              </div>
             }
           />
           <Route

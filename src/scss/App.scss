@@ -9,3 +9,9 @@
     background-attachment: fixed;
     height: 100vh;        
 }
+
+@media all and (min-width: 1280px) {
+    .main__characters{
+    display: flex;
+}}
+

@@ -13,12 +13,16 @@ function Character({ characterData }) {
   };
 
   return (
-    <li>
+    <li className="characterList__item">
       <NavLink to={`/character/${characterData.id}`}>
-        <h2>{characterData.name}</h2>
-        <img src={characterData.photo} alt={characterData.name} />
-        <p>{characterData.species}</p>
-        <p>
+        <h2 className="characterList__item--name">{characterData.name}</h2>
+        <img
+          className="characterList__item--photo"
+          src={characterData.photo}
+          alt={characterData.name}
+        />
+        <p className="characterList__item--specie">{characterData.species}</p>
+        <p className="characterList__item--status">
           {`${characterData.status} `}
           {deadOrAlive()}
         </p>

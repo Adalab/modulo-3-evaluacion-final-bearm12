@@ -7,7 +7,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     
     &__title {
@@ -57,7 +57,7 @@
 @media all and (min-width: 1280px) {
     .form__inputs {
         flex-direction: column;
-        justify-content: center;
+        
     }
     .inputs__choices {
         flex-direction: column;

@@ -1,21 +1,24 @@
+import "../scss/components/CharactersList.scss";
 import PropTypes from "prop-types";
 import Character from "./Character";
 
 function CharactersList({ charactersData, searchName }) {
   return (
-    <>
+    <section className="sectionCharacters">
       {charactersData.length > 0 ? (
-        <ul>
+        <ul className="characterList">
           {charactersData.map((character) => {
             return <Character key={character.id} characterData={character} />;
           })}
         </ul>
       ) : (
-        <div>
-          <p>No results found for &quot;{searchName}&quot;.</p>
+        <div className="center">
+          <p className="sectionCharacters__message">
+            No results found for &quot;{searchName}&quot;.
+          </p>
         </div>
       )}
-    </>
+    </section>
   );
 }
 

@@ -1,0 +1,61 @@
+@import '../core/variables';
+
+
+.sectionCharacters {
+    background-color: rgba(177, 223, 40, 0.568);
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__message {
+        background-color: azure;
+        display: inline-block;
+        padding: 50px;
+        border-radius: 5px;
+    }
+}
+
+.characterList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+
+    &__item {
+        width: 200px;
+        background-color: rgba(255, 255, 255, 0.767);
+        padding: 10px;
+        border-radius: 2px;
+
+        &--name {
+            color: $aqua;
+            text-align: center;
+            padding: 5px;
+        }
+
+        &--photo{
+            width: 100%;
+        }
+        
+        &--status {
+            color: black;
+            text-align: center;
+            padding: 5px;
+
+        }
+        
+        &--specie {
+            color: black;
+            text-align: center;
+            padding: 5px;
+        }
+
+    }
+}

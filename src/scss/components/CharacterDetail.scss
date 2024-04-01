@@ -1,0 +1,78 @@
+@import '../core/variables';
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 255, 247, 0.61);
+    padding: 10px;
+    padding-bottom: 50px;
+
+    &__btn {
+        align-self: flex-end;
+        margin-bottom: 10px;
+        
+        &--box {
+            height: 45px;
+            border: none;
+            background-color: $lime-green;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: $aqua;
+            padding: 10px 15px;
+            border-radius: 10px;
+
+            &:hover {
+                border: 2px solid $aqua;
+            }
+        }
+
+    }
+}
+
+.detailCard {
+    background-color: $aqua;
+    padding: 20px;
+    border-radius: 10px;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 2rem;
+        color: $lime-green;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__image {
+        max-width: 350px;
+        box-shadow: 0 0 8px $lime-green;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .detail__btn {
+        margin-right: 15%;
+    }
+
+    .detailCard {
+        margin: 0 15%;
+
+        &__group {
+            flex-direction: row;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
