@@ -8,15 +8,14 @@ function Filters({
   filterName,
   filterSpecie,
   filterStatus,
+  clearFilters,
   nameValue,
   spevieValue,
   statusValue,
 }) {
   const handleClick = (ev) => {
     ev.preventDefault();
-    filterName("");
-    filterSpecie("");
-    filterStatus([]);
+    clearFilters();
   };
 
   return (
@@ -43,6 +42,7 @@ Filters.propTypes = {
   filterName: PropTypes.func.isRequired,
   filterSpecie: PropTypes.func.isRequired,
   filterStatus: PropTypes.func.isRequired,
+  clearFilters: PropTypes.func.isRequired,
   nameValue: PropTypes.string.isRequired,
   spevieValue: PropTypes.string.isRequired,
   statusValue: PropTypes.array.isRequired,

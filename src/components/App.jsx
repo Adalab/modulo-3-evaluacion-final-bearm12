@@ -39,6 +39,12 @@ function App() {
     }
   };
 
+  const handleClickClear = () => {
+    setFilteredName("");
+    setFilteredSpecie("");
+    setFilteredStatus([]);
+  };
+
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filteredName.toLowerCase());
@@ -76,6 +82,7 @@ function App() {
                   filterName={handleChangeName}
                   filterSpecie={handleChangeSpecie}
                   filterStatus={handleChangeStatus}
+                  clearFilters={handleClickClear}
                   nameValue={filteredName}
                   spevieValue={filteredSpecie}
                   statusValue={filteredStatus}
