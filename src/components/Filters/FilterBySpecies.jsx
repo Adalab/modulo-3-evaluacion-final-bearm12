@@ -8,6 +8,17 @@ function FilterBySpecies({ filterSpecie, spevieValue }) {
     <div>
       <h3 className="inputs__title">By species</h3>
       <div className="inputs__choices">
+        <label htmlFor="all">
+          <input
+            type="radio"
+            name="specie"
+            id="all"
+            value=""
+            onChange={handleChange}
+            checked={spevieValue === ""}
+          />
+          All
+        </label>
         <label htmlFor="human">
           <input
             type="radio"
