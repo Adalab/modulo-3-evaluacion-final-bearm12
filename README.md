@@ -31,7 +31,7 @@ Luego, sigue estos pasos:
 ### Clona el repositorio
 
 ```bash
-git clone https://github.com/mar-cm.github.io/project-promo-w-module-3-team-3/
+git clone https://github.com/Adalab/modulo-3-evaluacion-final-bearm12.git
 ```
 
 ### Ingresa al directorio del proyecto
