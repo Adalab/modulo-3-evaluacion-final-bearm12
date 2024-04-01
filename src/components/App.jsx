@@ -56,6 +56,8 @@ function App() {
   const characterRoute = matchPath("/character/:idChar", pathname);
   const idChar = characterRoute ? parseInt(characterRoute.params.idChar) : null;
 
+  const characterExist = characters.findIndex((char) => char.id === idChar);
+
   const charDetailData = characters.find(
     (character) => character.id === idChar
   );
@@ -87,7 +89,12 @@ function App() {
           />
           <Route
             path="/character/:idChar"
-            element={<CharacterDetail character={charDetailData} />}
+            element={
+              <CharacterDetail
+                character={charDetailData}
+                exist={characterExist}
+              />
+            }
           />
         </Routes>
       </main>

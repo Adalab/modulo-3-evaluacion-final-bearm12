@@ -58,6 +58,11 @@
         gap: 8px;
         align-items: baseline;
     }
+
+    &__notFound {
+        text-align: center;
+        font-size: 2rem;
+    }
 }
 
 @media all and (min-width: 768px) {
